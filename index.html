@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Piramyd Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=JetBrains+Mono:wght@500&display=swap"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="lab">
+      <header class="lab-head">
+        <h1>Piramyd</h1>
+        <p>
+          Susun satu karakter menjadi piramisa. Ubah nilainya dan hasil langsung
+          berubah
+        </p>
+      </header>
+
+      <form class="controls" id="form" novalidate>
+        <div class="field">
+          <label for="char">Karakter</label>
+          <input
+            id="char"
+            type="text"
+            maxlength="1"
+            value="o"
+            autocomplete="off"
+            spellcheck="false"
+          />
+        </div>
+
+        <div class="field">
+          <label for="rows">Jumlah Baris</label>
+          <input
+            id="rows"
+            type="number"
+            min="1"
+            max="40"
+            step="1"
+            value="4"
+            inputmode="numeric"
+          />
+        </div>
+        
+        <div class="field field-check">
+            <input id="invert" type="checkbox">
+            <label for="invert">Balik Kebawah</label>
+        </div>
+
+        <p class="error" id="error" role="alert" hidden></p>
+        <button type="button" id="copy">Salin Hasil</button>
+      </form>
+
+      <section class="stage" aria-label="Hasil Piramida">
+        <pre id="output" aria-live="polite"></pre>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
